@@ -10,8 +10,24 @@ export class TrueOrFalseQuizComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  questions = [
+    {
+      question: " Is my name Vincent?",
+      answer: null
+    },
+    {
+      question: "Is my favorite color black?",
+      answer: null
+    },
 
-  constructor(private _formBuilder: FormBuilder) {}
+    {
+      question: "I like bananas",
+      answer: null 
+    }
+
+  ];
+
+  constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
