@@ -36,5 +36,20 @@
         <button mat-button (click)="stepper.reset()">Reset</button>
       </div>
     </mat-step>
+
+    <mat-step *ngFor="let question of questions" [stepControl]="firstFormGroup">
+
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>{{question.question}}</ng-template>
+        <mat-form-field>
+          <mat-label></mat-label>
+          <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    
   </mat-vertical-stepper>
   
