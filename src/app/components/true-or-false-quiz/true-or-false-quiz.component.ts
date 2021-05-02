@@ -37,5 +37,7 @@ export class TrueOrFalseQuizComponent implements OnInit {
       secondCtrl: ['', Validators.required]
     });
   }
-
+  questionaireCompleted(){
+    console.log("Questionaire Completed! ");
+  }
 }
