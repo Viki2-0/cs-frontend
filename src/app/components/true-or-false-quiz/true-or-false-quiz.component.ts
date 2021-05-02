@@ -8,19 +8,21 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class TrueOrFalseQuizComponent implements OnInit {
   isLinear = false;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
+   questionsForm: FormGroup;
   questions = [
     {
+      id:"q_1",
       question: " Is my name Vincent?",
       answer: null
     },
     {
+      id:"q_2",
       question: "Is my favorite color black?",
       answer: null
     },
 
     {
+      id:"q_3",
       question: "I like bananas",
       answer: null 
     }
@@ -30,14 +32,17 @@ export class TrueOrFalseQuizComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
+    let formData = {};
+    for(let i = 0; i < this.questions.length; i++) {
+      formData[this.questions[i].id] = ['', Validators.required];
+    }
+    console.log(formData);
+
+    this.questionsForm = this._formBuilder.group(formData);
   }
+  
   questionaireCompleted(){
     console.log("Questionaire Completed! ");
+    console.log(this.questionsForm);
   }
 }

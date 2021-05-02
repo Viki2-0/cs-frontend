@@ -5,7 +5,7 @@
 
     <mat-step *ngFor="let question of questions" [stepControl]="firstFormGroup">
 
-      <form [formGroup]="firstFormGroup">
+      <form [formGroup]="questionsForm">
         <ng-template matStepLabel>{{question.question}}</ng-template>
 
           <mat-radio-group aria-label="Select an option">
