@@ -34,7 +34,7 @@ export class TrueOrFalseQuizComponent implements OnInit {
   ngOnInit() {
     let formData = {};
     for(let i = 0; i < this.questions.length; i++) {
-      formData[this.questions[i].id] = ['', Validators.required];
+      formData[this.questions[i].id] = ['' ];
     }
     console.log(formData);
 

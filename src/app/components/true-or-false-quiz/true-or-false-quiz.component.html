@@ -3,9 +3,9 @@
   </button>
   <mat-vertical-stepper [linear]="isLinear" #stepper>
 
+    <form [formGroup]="questionsForm">
     <mat-step *ngFor="let question of questions" [stepControl]="firstFormGroup">
 
-      <form [formGroup]="questionsForm">
         <ng-template matStepLabel>{{question.question}}</ng-template>
 
           <mat-radio-group aria-label="Select an option">
@@ -16,9 +16,9 @@
         <div>
           <button mat-button matStepperNext>Next</button>
         </div>
-      </form>
+      
     </mat-step>
-
+  </form>
     <mat-step>
       <ng-template matStepLabel>Done</ng-template>
       <p>You are now done.</p>
