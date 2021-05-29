@@ -11,10 +11,12 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
+import { AddTrueOrFalseComponent } from './components/add-true-or-false/add-true-or-false.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TrueOrFalseQuizComponent
+    TrueOrFalseQuizComponent,
+    AddTrueOrFalseComponent
   ],
   imports: [
     BrowserModule,
